@@ -50,6 +50,8 @@ gem "rubocop-discourse"
 gem "solargraph"
 gem "standard"
 
+gem "faraday"
+
 # Use Sass to process CSS
 gem "sassc-rails"
 
@@ -79,4 +81,5 @@ group :test do
   gem "launchy"
   gem "rspec-rails"
   gem "simplecov"
+  gem "webmock"
 end
