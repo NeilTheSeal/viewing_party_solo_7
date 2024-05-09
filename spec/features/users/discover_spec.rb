@@ -8,13 +8,7 @@ RSpec.describe "Discover Movies" do
     )
   end
 
-  it "can list the most popular movies" do
-    json_response = File.read("spec/fixtures/popular_movies.json")
-    stub_request(
-      :get,
-      "https://api.themoviedb.org/3/discover/movie"
-    ).to_return(status: 200, body: json_response)
-
+  it "can list the most popular movies", :vcr do
     visit "/users/#{@user.id}/discover"
 
     click_button "Top Rated Movies"
@@ -30,13 +24,7 @@ RSpec.describe "Discover Movies" do
     expect(page).to have_content("Monster's Battlefield")
   end
 
-  it "can find a movie by title search" do
-    json_response = File.read("spec/fixtures/movie_search.json")
-    stub_request(
-      :get,
-      "https://api.themoviedb.org/3/search/movie"
-    ).to_return(status: 200, body: json_response)
-
+  it "can find a movie by title search", :vcr do
     visit "/users/#{@user.id}/discover"
 
     fill_in :search, with: "Super Troopers"
