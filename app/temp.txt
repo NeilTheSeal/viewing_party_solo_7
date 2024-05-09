@@ -1,0 +1,3 @@
+moviedb:
+  key: Bearer 1a7ecbb8bcf5358950620a777fd03254
+  access_token: Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxYTdlY2JiOGJjZjUzNTg5NTA2MjBhNzc3ZmQwMzI1NCIsInN1YiI6IjY2M2JmNzk2NTMyNzIzYWYzYTAxMTRhMCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mwf6QOJ9zjr0fjQUdUuT_RZgoY-2t4ZkUFP5dUDXlrs
