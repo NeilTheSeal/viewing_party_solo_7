@@ -82,4 +82,5 @@ VCR.configure do |config|
   end
   config.default_cassette_options = { re_record_interval: 7.days }
   config.configure_rspec_metadata!
+  config.default_cassette_options = { decode_compressed_response: true }
 end

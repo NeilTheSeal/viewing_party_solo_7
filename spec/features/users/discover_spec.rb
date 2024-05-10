@@ -9,19 +9,19 @@ RSpec.describe "Discover Movies" do
   end
 
   it "can list the most popular movies", :vcr do
+    # VCR.use_cassette("name_of_cassette") do
+
+    # end
     visit "/users/#{@user.id}/discover"
 
-    click_button "Top Rated Movies"
+    click_link "Top Rated Movies"
 
     expect(page).to have_current_path("/users/#{@user.id}/movies")
     expect(page.status_code).to eq 200
-    expect(page).to have_content("Godzilla Minus One")
-    expect(page).to have_content("Godzilla x Kong: The New Empire")
-    expect(page).to have_content("Kingdom of the Planet of the Apes")
-    expect(page).to have_content("Dune: Part Two")
-    expect(page).to have_content("The Idea of You")
-    expect(page).to have_content("Ape vs. Mecha Ape")
-    expect(page).to have_content("Monster's Battlefield")
+    within "#movies" do
+      expect(page).to have_css(".movie-info", count: 20)
+      expect(page).to have_css("a", count: 20)
+    end
   end
 
   it "can find a movie by title search", :vcr do
