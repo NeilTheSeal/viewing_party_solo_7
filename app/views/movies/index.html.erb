@@ -1,0 +1,5 @@
+<ol id="movies">
+  <% @facade.movies.each do |movie| %>
+    <li class="movie-info"><%= link_to movie.title, "/" %></li>
+  <% end %>
+</ol>

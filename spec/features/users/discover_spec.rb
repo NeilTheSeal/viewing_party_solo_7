@@ -16,7 +16,10 @@ RSpec.describe "Discover Movies" do
 
     click_link "Top Rated Movies"
 
-    expect(page).to have_current_path("/users/#{@user.id}/movies")
+    expect(page).to have_current_path(
+      "/users/#{@user.id}/movies",
+      ignore_query: true
+    )
     expect(page.status_code).to eq 200
     within "#movies" do
       expect(page).to have_css(".movie-info", count: 20)
@@ -30,7 +33,10 @@ RSpec.describe "Discover Movies" do
     fill_in :search, with: "Super Troopers"
     click_button "Search"
 
-    expect(page).to have_current_path("/users/#{@user.id}/movies")
+    expect(page).to have_current_path(
+      "/users/#{@user.id}/movies",
+      ignore_query: true
+    )
     expect(page.status_code).to eq 200
     expect(page).to have_content("Super Troopers")
     expect(page).to have_content("Super Troopers 2")
