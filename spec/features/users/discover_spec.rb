@@ -39,7 +39,7 @@ RSpec.describe "Discover Movies" do
     end
   end
 
-  it "can find a movie by title search", :vcr do
+  it "can find a movie by title search" do
     VCR.use_cassette("movie_search", serialize_with: :json) do |cassette|
       visit "/users/#{@user.id}/discover"
 
